@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import phoopy.http
 
 long_description = open('README.rst', 'r').read()
@@ -6,7 +6,7 @@ long_description = open('README.rst', 'r').read()
 setup(
     name='phoopy-http',
     version=phoopy.http.__version__,
-    packages=['phoopy', 'phoopy.http'],
+    packages=find_packages(),
     setup_requires=['wheel'],
     install_requires=[
         'CherryPy>=18.1.0',
