@@ -7,6 +7,9 @@ setup(
     name='phoopy-http',
     version=phoopy.http.__version__,
     packages=find_packages(),
+    package_data={
+        'phoopy.http.http_bundle': ['config/*.yml'],
+    },
     setup_requires=['wheel'],
     install_requires=[
         'CherryPy>=18.1.0',
