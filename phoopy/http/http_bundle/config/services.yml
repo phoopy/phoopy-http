@@ -1,0 +1,8 @@
+services:
+    server_start_command:
+        class: phoopy.http.http_bundle.source.command.ServerStartCommand
+        kwargs:
+            logger: '@logger'
+            container: '@container'
+        tag:
+            - command
