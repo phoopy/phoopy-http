@@ -4,5 +4,6 @@ services:
         kwargs:
             logger: '@logger'
             container: '@container'
+            flask_config: '@flask.config'
         tag:
             - command

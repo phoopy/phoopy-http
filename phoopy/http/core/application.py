@@ -1,9 +1,13 @@
 import cherrypy
 from flask import Flask
 
+
 class Application(object):
-    def __init__(self, logger, debug):
-        self.flask = Flask('phoopy_http_server')
+    def __init__(self, logger, debug, flask_config):
+        self.flask = Flask(
+            'phoopy_http_server',
+            template_folder=flask_config['template_folder']
+        )
         self.debug = debug
 
     def parse_controller(self, controller):
