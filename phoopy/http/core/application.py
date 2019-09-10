@@ -8,6 +8,9 @@ class Application(object):
             'phoopy_http_server',
             template_folder=flask_config['template_folder']
         )
+        custom_config = flask_config.get('config', None)
+        if custom_config:
+            self.flask.config.update(custom_config)
         self.debug = debug
 
     def parse_controller(self, controller):
@@ -30,5 +33,6 @@ class Application(object):
                 'server.socket_host': host,
                 'server.socket_port': port,
                 'engine.autoreload.on': False,
+                'server.max_request_body_size': self.flask.config.get('MAX_CONTENT_LENGTH', 0),
             })
             cherrypy.engine.start()
