@@ -14,6 +14,7 @@ setup(
     install_requires=[
         'CherryPy>=18.1.0',
         'Flask>=1.0.0',
+        'Paste>=3.2.0',
     ],
     description="Http library for phoopy framework",
     long_description=long_description,

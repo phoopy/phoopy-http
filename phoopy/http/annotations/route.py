@@ -10,6 +10,7 @@ def route(method, pattern, name):
 
     return decorator
 
+
 class RouteAnnotation(object):
     def __init__(self, fn, method, pattern, name):
         self.fn = fn
