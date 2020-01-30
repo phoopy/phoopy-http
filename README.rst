@@ -5,6 +5,8 @@ phoopy-http
 
 Http library for phoopy framework
 
+`Documentation <https://github.com/phoopy/phoopy-http/blob/master/DOCUMENTATION.md>`_
+
 
 .. |Build Status| image:: https://travis-ci.org/phoopy/phoopy-http.svg
    :target: https://travis-ci.org/phoopy/phoopy-http
