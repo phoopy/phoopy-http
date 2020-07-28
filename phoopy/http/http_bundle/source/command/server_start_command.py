@@ -14,10 +14,19 @@ class ServerStartCommand(AbstractCommand):
     {--port=9000 : Port}
     {--debug : Enable debugging server}
     """
-    def __init__(self, logger, container, flask_config):
+    def __init__(self, logger, container, flask_config, phoopy_http_config):
         super(ServerStartCommand, self).__init__(logger)
         self.container = container
         self.flask_config = flask_config
+        self.phoopy_http_config = phoopy_http_config
+
+    def setup_logger(self, timestamp=False, name=None, max_bytes=1000000, backup_count=4):
+        disable_file_log = self.phoopy_http_config.get('disable_file_log', False)
+
+        if disable_file_log:
+            return
+
+        super(ServerStartCommand, self).setup_logger(timestamp, name, max_bytes, backup_count)
 
     def handle(self):
         self.setup_logger()
